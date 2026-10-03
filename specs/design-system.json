@@ -1,0 +1,389 @@
+{
+  "frames": [
+    {
+      "type": "FRAME",
+      "name": "设计规范 v1.0",
+      "layout": "V",
+      "w": 720,
+      "h": "hug",
+      "pad": [40, 48],
+      "gap": 40,
+      "cross": "MIN",
+      "fill": "#F2F3F5",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Header",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 8,
+          "fill": null,
+          "children": [
+            { "type": "TEXT", "name": "Title", "text": "金融行情 App · 设计规范", "size": 28, "weight": 600, "color": "#16181D" },
+            { "type": "TEXT", "name": "Subtitle", "text": "Design Tokens v1.0 · PingFang SC · 390pt 基准", "size": 14, "color": "#6B7280" }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "name": "Section·色彩",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 16,
+          "fill": "#FFFFFF",
+          "radius": 10,
+          "pad": 24,
+          "children": [
+            { "type": "TEXT", "name": "H2", "text": "色彩 Color", "size": 20, "weight": 600, "color": "#16181D" },
+
+            {
+              "type": "FRAME",
+              "name": "Row·中性色",
+              "layout": "V",
+              "w": "fill",
+              "h": "hug",
+              "gap": 12,
+              "fill": null,
+              "children": [
+                { "type": "TEXT", "name": "Label", "text": "中性色 Neutrals", "size": 13, "weight": 600, "color": "#6B7280" },
+                {
+                  "type": "FRAME",
+                  "name": "Swatches",
+                  "layout": "H",
+                  "w": "fill",
+                  "h": "hug",
+                  "gap": 12,
+                  "fill": null,
+                  "children": [
+                    { "type": "FRAME", "name": "text-primary", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#16181D", "radius": 8 },
+                      { "type": "TEXT", "text": "text/primary", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#16181D", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "text-secondary", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#6B7280", "radius": 8 },
+                      { "type": "TEXT", "text": "text/secondary", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#6B7280", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "text-tertiary", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#C3C8D0", "radius": 8 },
+                      { "type": "TEXT", "text": "text/tertiary", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#C3C8D0", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "border-default", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#EDEFF3", "radius": 8, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                      { "type": "TEXT", "text": "border/default", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#EDEFF3", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "bg-page", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#F2F3F5", "radius": 8, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                      { "type": "TEXT", "text": "bg/page", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#F2F3F5", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "bg-card", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#FFFFFF", "radius": 8, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                      { "type": "TEXT", "text": "bg/card", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#FFFFFF", "size": 11, "color": "#6B7280" }
+                    ]}
+                  ]
+                }
+              ]
+            },
+
+            {
+              "type": "FRAME",
+              "name": "Row·语义色",
+              "layout": "V",
+              "w": "fill",
+              "h": "hug",
+              "gap": 12,
+              "fill": null,
+              "children": [
+                { "type": "TEXT", "name": "Label", "text": "语义色 Semantic", "size": 13, "weight": 600, "color": "#6B7280" },
+                {
+                  "type": "FRAME",
+                  "name": "Swatches",
+                  "layout": "H",
+                  "w": "fill",
+                  "h": "hug",
+                  "gap": 12,
+                  "fill": null,
+                  "children": [
+                    { "type": "FRAME", "name": "up", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#E8453C", "radius": 8 },
+                      { "type": "TEXT", "text": "semantic/up", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#E8453C", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "up-bg", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#FDECEC", "radius": 8 },
+                      { "type": "TEXT", "text": "up-bg", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#FDECEC", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "down", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#12A87A", "radius": 8 },
+                      { "type": "TEXT", "text": "semantic/down", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#12A87A", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "down-bg", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#E7F6F2", "radius": 8 },
+                      { "type": "TEXT", "text": "down-bg", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#E7F6F2", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "warn", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#F0A020", "radius": 8 },
+                      { "type": "TEXT", "text": "semantic/warn", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#F0A020", "size": 11, "color": "#6B7280" }
+                    ]},
+                    { "type": "FRAME", "name": "brand", "layout": "V", "w": 100, "h": "hug", "gap": 8, "fill": null, "children": [
+                      { "type": "RECT", "name": "Chip", "w": 100, "h": 56, "fill": "#3E7BFA", "radius": 8 },
+                      { "type": "TEXT", "text": "brand/primary", "size": 11, "color": "#16181D" },
+                      { "type": "TEXT", "text": "#3E7BFA", "size": 11, "color": "#6B7280" }
+                    ]}
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "name": "Section·字体",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 16,
+          "fill": "#FFFFFF",
+          "radius": 10,
+          "pad": 24,
+          "children": [
+            { "type": "TEXT", "name": "H2", "text": "字体 Typography", "size": 20, "weight": 600, "color": "#16181D" },
+            { "type": "TEXT", "name": "Note", "text": "字体族 PingFang SC · 字重 Regular / Medium", "size": 12, "color": "#6B7280" },
+            {
+              "type": "FRAME",
+              "name": "Scale",
+              "layout": "V",
+              "w": "fill",
+              "h": "hug",
+              "gap": 12,
+              "fill": null,
+              "children": [
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "display/price", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "1,682.00", "size": 33, "color": "#16181D" },
+                  { "type": "TEXT", "text": "33 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "title/lg", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "页面标题 · 行情", "size": 20, "weight": 600, "color": "#16181D" },
+                  { "type": "TEXT", "text": "20 · Medium", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "title/md", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "详情标题 · 贵州茅台", "size": 17, "weight": 600, "color": "#16181D" },
+                  { "type": "TEXT", "text": "17 · Medium", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "body/lg", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "列表主文案 · 宁德时代", "size": 16, "weight": 600, "color": "#16181D" },
+                  { "type": "TEXT", "text": "16 · Medium", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "body/md", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "正文 · 行业资金净流入持续回暖", "size": 14, "color": "#16181D" },
+                  { "type": "TEXT", "text": "14 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "label", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "标签 · +1.24%", "size": 13, "color": "#16181D" },
+                  { "type": "TEXT", "text": "13 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "caption", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "辅助说明 · 盘口数据 1,682.00", "size": 12, "color": "#16181D" },
+                  { "type": "TEXT", "text": "12 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "caption/sm", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "代码 · 600519", "size": 11, "color": "#16181D" },
+                  { "type": "TEXT", "text": "11 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]},
+                { "type": "FRAME", "layout": "H", "w": "fill", "h": "hug", "gap": 16, "cross": "CENTER", "fill": null, "children": [
+                  { "type": "TEXT", "text": "micro", "size": 11, "color": "#6B7280", "w": 110 },
+                  { "type": "TEXT", "text": "TabBar · 行情", "size": 10, "color": "#16181D" },
+                  { "type": "TEXT", "text": "10 · Regular", "size": 11, "color": "#C3C8D0" }
+                ]}
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "name": "Section·按钮",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 16,
+          "fill": "#FFFFFF",
+          "radius": 10,
+          "pad": 24,
+          "children": [
+            { "type": "TEXT", "name": "H2", "text": "按钮 Button", "size": 20, "weight": 600, "color": "#16181D" },
+            { "type": "TEXT", "name": "Note", "text": "高 40 · 圆角 8 · 字号 14 · 水平内边距 16", "size": 12, "color": "#6B7280" },
+            {
+              "type": "FRAME",
+              "name": "Row",
+              "layout": "H",
+              "w": "fill",
+              "h": "hug",
+              "gap": 16,
+              "fill": null,
+              "children": [
+                {
+                  "type": "FRAME", "name": "Btn·Primary", "layout": "H", "w": 120, "h": 40,
+                  "pad": [0, 16], "main": "CENTER", "cross": "CENTER",
+                  "fill": "#E8453C", "radius": 8,
+                  "children": [{ "type": "TEXT", "text": "买入", "size": 14, "weight": 600, "color": "#FFFFFF", "align": "CENTER" }]
+                },
+                {
+                  "type": "FRAME", "name": "Btn·Success", "layout": "H", "w": 120, "h": 40,
+                  "pad": [0, 16], "main": "CENTER", "cross": "CENTER",
+                  "fill": "#12A87A", "radius": 8,
+                  "children": [{ "type": "TEXT", "text": "卖出", "size": 14, "weight": 600, "color": "#FFFFFF", "align": "CENTER" }]
+                },
+                {
+                  "type": "FRAME", "name": "Btn·Secondary", "layout": "H", "w": 120, "h": 40,
+                  "pad": [0, 16], "main": "CENTER", "cross": "CENTER",
+                  "fill": "#FFFFFF", "radius": 8, "stroke": "#C3C8D0", "strokeWeight": 1,
+                  "children": [{ "type": "TEXT", "text": "自选", "size": 14, "weight": 600, "color": "#16181D", "align": "CENTER" }]
+                },
+                {
+                  "type": "FRAME", "name": "Btn·Brand", "layout": "H", "w": 120, "h": 40,
+                  "pad": [0, 16], "main": "CENTER", "cross": "CENTER",
+                  "fill": "#3E7BFA", "radius": 8,
+                  "children": [{ "type": "TEXT", "text": "确认", "size": 14, "weight": 600, "color": "#FFFFFF", "align": "CENTER" }]
+                },
+                {
+                  "type": "FRAME", "name": "Btn·Ghost", "layout": "H", "w": 120, "h": 40,
+                  "pad": [0, 16], "main": "CENTER", "cross": "CENTER",
+                  "fill": null, "radius": 8,
+                  "children": [{ "type": "TEXT", "text": "更多", "size": 14, "weight": 600, "color": "#3E7BFA", "align": "CENTER" }]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "name": "Section·卡片与标签",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 16,
+          "fill": "#FFFFFF",
+          "radius": 10,
+          "pad": 24,
+          "children": [
+            { "type": "TEXT", "name": "H2", "text": "卡片与标签 Card & Chip", "size": 20, "weight": 600, "color": "#16181D" },
+            {
+              "type": "FRAME",
+              "name": "Row",
+              "layout": "H",
+              "w": "fill",
+              "h": "hug",
+              "gap": 16,
+              "fill": null,
+              "children": [
+                {
+                  "type": "FRAME", "name": "Card·示例", "layout": "V", "w": 220, "h": "hug",
+                  "gap": 8, "pad": 12, "fill": "#FFFFFF", "radius": 10,
+                  "stroke": "#EDEFF3", "strokeWeight": 1,
+                  "shadow": { "color": "#00000012", "x": 0, "y": 2, "blur": 8 },
+                  "children": [
+                    { "type": "TEXT", "text": "上证指数", "size": 11, "color": "#6B7280" },
+                    { "type": "TEXT", "text": "3,102.45", "size": 20, "weight": 600, "color": "#E8453C" },
+                    { "type": "TEXT", "text": "+0.76%", "size": 13, "color": "#E8453C" }
+                  ]
+                },
+                {
+                  "type": "FRAME", "name": "Chips", "layout": "V", "w": "hug", "h": "hug",
+                  "gap": 10, "fill": null,
+                  "children": [
+                    {
+                      "type": "FRAME", "name": "Chip·up", "layout": "H", "w": "hug", "h": 30,
+                      "pad": [0, 12], "main": "CENTER", "cross": "CENTER",
+                      "fill": "#FDECEC", "radius": 6,
+                      "children": [{ "type": "TEXT", "text": "+1.24%", "size": 13, "color": "#E8453C", "align": "CENTER" }]
+                    },
+                    {
+                      "type": "FRAME", "name": "Chip·down", "layout": "H", "w": "hug", "h": 30,
+                      "pad": [0, 12], "main": "CENTER", "cross": "CENTER",
+                      "fill": "#E7F6F2", "radius": 6,
+                      "children": [{ "type": "TEXT", "text": "-0.94%", "size": 13, "color": "#12A87A", "align": "CENTER" }]
+                    },
+                    {
+                      "type": "FRAME", "name": "Chip·tag", "layout": "H", "w": "hug", "h": 24,
+                      "pad": [0, 8], "main": "CENTER", "cross": "CENTER",
+                      "fill": "#F2F3F5", "radius": 6,
+                      "children": [{ "type": "TEXT", "text": "MA20", "size": 11, "color": "#6B7280", "align": "CENTER" }]
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME", "name": "Radius", "layout": "V", "w": "hug", "h": "hug",
+                  "gap": 10, "fill": null,
+                  "children": [
+                    { "type": "TEXT", "text": "圆角 Radius", "size": 11, "color": "#6B7280" },
+                    {
+                      "type": "FRAME", "layout": "H", "w": "hug", "h": "hug", "gap": 10, "fill": null,
+                      "children": [
+                        { "type": "RECT", "w": 48, "h": 48, "fill": "#EDEFF3", "radius": 6, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                        { "type": "RECT", "w": 48, "h": 48, "fill": "#EDEFF3", "radius": 8, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                        { "type": "RECT", "w": 48, "h": 48, "fill": "#EDEFF3", "radius": 10, "stroke": "#C3C8D0", "strokeWeight": 1 },
+                        { "type": "RECT", "w": 48, "h": 48, "fill": "#EDEFF3", "radius": 16, "stroke": "#C3C8D0", "strokeWeight": 1 }
+                      ]
+                    },
+                    { "type": "FRAME", "layout": "H", "w": "hug", "h": "hug", "gap": 10, "fill": null,
+                      "children": [
+                        { "type": "TEXT", "text": "6", "size": 11, "color": "#6B7280", "w": 48, "align": "CENTER" },
+                        { "type": "TEXT", "text": "8", "size": 11, "color": "#6B7280", "w": 48, "align": "CENTER" },
+                        { "type": "TEXT", "text": "10", "size": 11, "color": "#6B7280", "w": 48, "align": "CENTER" },
+                        { "type": "TEXT", "text": "16", "size": 11, "color": "#6B7280", "w": 48, "align": "CENTER" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "name": "Section·统一说明",
+          "layout": "V",
+          "w": "fill",
+          "h": "hug",
+          "gap": 12,
+          "fill": "#FFFFFF",
+          "radius": 10,
+          "pad": 24,
+          "children": [
+            { "type": "TEXT", "name": "H2", "text": "统一规则 Unification Rules", "size": 20, "weight": 600, "color": "#16181D" },
+            { "type": "TEXT", "text": "1. 次要文字统一为 #6B7280（原 #8A9099 对比度不足）", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "2. 字号取整：12.5→12 · 11.5→12 · 14.5→14 · 9.5→10", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "3. 详情页股票名字重统一为 Medium（原 Regular）", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "4. 边框色统一为 #EDEFF3 / #C3C8D0（原 #D5D8DE 并入）", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "5. 页面浅底统一为 #F2F3F5（原 #F7F8FA 并入）", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "6. 按钮文字统一为 14 Medium · 高 40 · 圆角 8", "size": 14, "color": "#16181D" },
+            { "type": "TEXT", "text": "7. 长文案误用 11.5 的改回正文 14", "size": 14, "color": "#16181D" }
+          ]
+        }
+      ]
+    }
+  ]
+}

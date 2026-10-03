@@ -1,0 +1,157 @@
+{
+  "frames": [
+    {
+      "type": "FRAME",
+      "name": "个人资料卡片",
+      "layout": "V",
+      "w": 360,
+      "h": "hug",
+      "pad": 24,
+      "gap": 16,
+      "cross": "CENTER",
+      "fill": "#FFFFFF",
+      "radius": 16,
+      "stroke": "#E5E7EB",
+      "strokeWeight": 1,
+      "shadow": { "color": "#00000014", "x": 0, "y": 8, "blur": 24, "spread": 0 },
+      "children": [
+        {
+          "type": "ELLIPSE",
+          "name": "Avatar",
+          "w": 88,
+          "h": 88,
+          "fill": "#4F46E5"
+        },
+        {
+          "type": "TEXT",
+          "name": "姓名",
+          "text": "林晚晴",
+          "size": 22,
+          "weight": 600,
+          "color": "#111827",
+          "align": "CENTER"
+        },
+        {
+          "type": "TEXT",
+          "name": "职位",
+          "text": "产品设计师 · 体验组",
+          "size": 14,
+          "color": "#6B7280",
+          "align": "CENTER"
+        },
+        {
+          "type": "FRAME",
+          "name": "Stats",
+          "layout": "H",
+          "w": "fill",
+          "h": "hug",
+          "gap": 0,
+          "main": "SPACE_BETWEEN",
+          "cross": "CENTER",
+          "fill": null,
+          "children": [
+            {
+              "type": "FRAME",
+              "name": "Stat·项目",
+              "layout": "V",
+              "w": "hug",
+              "h": "hug",
+              "gap": 4,
+              "cross": "CENTER",
+              "fill": null,
+              "children": [
+                { "type": "TEXT", "text": "128", "size": 20, "weight": 600, "color": "#111827", "align": "CENTER" },
+                { "type": "TEXT", "text": "项目", "size": 12, "color": "#9CA3AF", "align": "CENTER" }
+              ]
+            },
+            {
+              "type": "RECT",
+              "name": "Divider",
+              "w": 1,
+              "h": 32,
+              "fill": "#E5E7EB"
+            },
+            {
+              "type": "FRAME",
+              "name": "Stat·粉丝",
+              "layout": "V",
+              "w": "hug",
+              "h": "hug",
+              "gap": 4,
+              "cross": "CENTER",
+              "fill": null,
+              "children": [
+                { "type": "TEXT", "text": "2.4k", "size": 20, "weight": 600, "color": "#111827", "align": "CENTER" },
+                { "type": "TEXT", "text": "粉丝", "size": 12, "color": "#9CA3AF", "align": "CENTER" }
+              ]
+            },
+            {
+              "type": "RECT",
+              "name": "Divider",
+              "w": 1,
+              "h": 32,
+              "fill": "#E5E7EB"
+            },
+            {
+              "type": "FRAME",
+              "name": "Stat·获赞",
+              "layout": "V",
+              "w": "hug",
+              "h": "hug",
+              "gap": 4,
+              "cross": "CENTER",
+              "fill": null,
+              "children": [
+                { "type": "TEXT", "text": "56", "size": 20, "weight": 600, "color": "#111827", "align": "CENTER" },
+                { "type": "TEXT", "text": "获赞", "size": 12, "color": "#9CA3AF", "align": "CENTER" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Actions",
+          "layout": "H",
+          "w": "fill",
+          "h": "hug",
+          "gap": 12,
+          "fill": null,
+          "children": [
+            {
+              "type": "FRAME",
+              "name": "Btn·关注",
+              "layout": "H",
+              "w": "fill",
+              "h": 44,
+              "pad": [0, 16],
+              "main": "CENTER",
+              "cross": "CENTER",
+              "fill": "#4F46E5",
+              "radius": 22,
+              "children": [
+                { "type": "TEXT", "text": "关注", "size": 15, "weight": 600, "color": "#FFFFFF", "align": "CENTER" }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Btn·私信",
+              "layout": "H",
+              "w": "fill",
+              "h": 44,
+              "pad": [0, 16],
+              "main": "CENTER",
+              "cross": "CENTER",
+              "fill": "#FFFFFF",
+              "radius": 22,
+              "stroke": "#D1D5DB",
+              "strokeWeight": 1,
+              "children": [
+                { "type": "TEXT", "text": "私信", "size": 15, "weight": 600, "color": "#374151", "align": "CENTER" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

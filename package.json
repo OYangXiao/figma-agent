@@ -1,0 +1,42 @@
+{
+  "name": "fimg-agent-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "让 AI Agent 直接在 Figma 画布上创建 App 原型（本地桥 + Figma 插件渲染引擎）",
+  "keywords": [
+    "figma",
+    "plugin",
+    "prototype",
+    "agent",
+    "design-automation"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "bridge": "./scripts/start-bridge.sh",
+    "doctor": "./scripts/doctor.sh",
+    "test": "node test/plugin.test.mjs",
+    "dev": "./scripts/dev.sh",
+    "dev:figma": "./scripts/dev.sh --figma",
+    "spec": "node specs/build-stock-spec.mjs",
+    "check": "node specs/validate-spec.mjs",
+    "preview": "python3 specs/preview.py",
+    "status": "node tools/figma.mjs status",
+    "ping": "node tools/figma.mjs ping",
+    "stats": "node tools/figma.mjs stats",
+    "list": "node tools/figma.mjs list",
+    "sel": "node tools/figma.mjs sel",
+    "dump": "node tools/figma.mjs dump",
+    "patch": "node tools/figma.mjs patch",
+    "insert": "node tools/figma.mjs insert",
+    "rm": "node tools/figma.mjs rm",
+    "render": "node tools/figma.mjs render",
+    "export": "node tools/figma.mjs export --all",
+    "clear": "node tools/figma.mjs clear",
+    "fake-plugin": "node test/fake-plugin.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

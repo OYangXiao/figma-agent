@@ -1,0 +1,26 @@
+{
+  "_说明": "滚区底部渐变遮罩：绝对定位叠在滚区下端，从透明淡出到白色。y = 滚区底边(767.5) − 28。用法：./fimg insert specs/scroll-fade.json --parent <屏幕Frame的id>",
+  "root": {
+    "type": "RECT",
+    "name": "ScrollFade",
+    "w": 390,
+    "h": 28,
+    "positioning": "ABSOLUTE",
+    "x": 0,
+    "y": 739.5,
+    "fill": {
+      "gradient": "linear",
+      "angle": 90,
+      "stops": [
+        [
+          0,
+          "#FFFFFF00"
+        ],
+        [
+          1,
+          "#FFFFFFFF"
+        ]
+      ]
+    }
+  }
+}

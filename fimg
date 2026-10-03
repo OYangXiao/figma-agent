@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# =============================================================================
+# fimg —— 统一入口（不依赖 npm）
+#
+#   ./fimg doctor              一键自检（推荐第一次先跑这个）
+#   ./fimg test                插件单元测试（不需要 Figma）
+#   ./fimg bridge              启动本地桥（常驻）
+#
+#   ./fimg status | ping | stats | list | sel
+#   ./fimg dump  --name "卡片" --out dumps/c.json
+#   ./fimg patch --ops ops.json --dry
+#   ./fimg insert --parent 12:345
+#   ./fimg rm    --name "旧卡片" --dry
+#   ./fimg render | export | clear
+#
+#   ./fimg spec | check | preview      从零生成模式的本地三步
+#   ./fimg dev [--figma]               完整开发回路
+#
+# 为什么不用 npm：本环境里 npm 可能不存在（node 是内置运行时）。
+# 这个入口自己解析运行时，所以任何机器上都能用。
+# =============================================================================
+set -uo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if ! . "$DIR/scripts/runtime.sh"; then
+  exit 1
+fi
+cd "$REPO_ROOT"
+
+CMD="${1:-help}"
+[ $# -gt 0 ] && shift
+
+case "$CMD" in
+  # —— 项目自带工具
+  doctor)          exec ./scripts/doctor.sh ;;
+  test)            exec "$NODE" test/plugin.test.mjs ;;
+  bridge|start)    exec ./scripts/start-bridge.sh ;;
+  dev)             exec ./scripts/dev.sh "$@" ;;
+  spec)            exec "$NODE" specs/build-stock-spec.mjs "$@" ;;
+  check|validate)  exec "$NODE" specs/validate-spec.mjs "$@" ;;
+  preview)         exec "$PY" specs/preview.py "$@" ;;
+  fake-plugin)     exec "$NODE" test/fake-plugin.mjs "$@" ;;
+
+  # —— 其余全部转给 CLI（status/ping/stats/list/sel/dump/patch/insert/rm/render/export/clear）
+  help|-h|--help|"")
+                   exec "$NODE" tools/figma.mjs help ;;
+  *)               exec "$NODE" tools/figma.mjs "$CMD" "$@" ;;
+esac

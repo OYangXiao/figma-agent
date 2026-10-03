@@ -1,0 +1,14 @@
+{
+  "name": "FIMG Agent Plugin",
+  "id": "fimg-agent-plugin-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["http://localhost:8787"],
+    "devAllowedDomains": ["http://localhost:8787"],
+    "reasoning": "本插件只连接本机开发服务器（DSH 原型桥 localhost:8787），用于接收渲染指令并回传画布截图，不访问任何外部网络。"
+  }
+}
