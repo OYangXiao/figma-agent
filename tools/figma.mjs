@@ -567,7 +567,7 @@ switch (cmd) {
     await requirePlugin();
     // 位置参数：第一个非 --flag 的 token 就是 action
     const action = rest.find((a) => !a.startsWith('--')) || 'list';
-    const payload = { action };
+    const payload = { action: (action === 'check' || action === 'audit') ? 'list' : action };
     if (flag('name')) payload.name = String(flag('name'));
     if (flag('to')) payload.to = String(flag('to'));
     if (flag('copy') || flag('copy-from')) payload.copyFrom = String(flag('copy') || flag('copy-from'));
@@ -583,6 +583,52 @@ switch (cmd) {
         const tag = p.kind === 'beta' ? `  [beta.${p.rev}]` : '  [release]';
         console.log(`  ${String(p.index).padStart(2)}. ${p.name}${tag}  ${p.nodes} 个顶层节点`);
       });
+    } else if (action === 'check' || action === 'audit') {
+      const extractDate = (s) => {
+        const m = String(s).match(/(\d{4}-\d{2}-\d{2})/);
+        return m ? m[1] : null;
+      };
+      const releases = d.pages.filter((p) => p.kind === 'release' && extractDate(p.name));
+      releases.sort((a, b) => extractDate(b.name).localeCompare(extractDate(a.name)));
+      const latestRelease = releases[0] || null;
+
+      const betas = d.pages.filter((p) => p.kind === 'beta');
+      const outdatedBetas = [];
+      const activeBetas = [];
+
+      for (const b of betas) {
+        const bDate = extractDate(b.name);
+        const rDate = latestRelease ? extractDate(latestRelease.name) : null;
+        if (rDate && bDate && bDate < rDate) {
+          outdatedBetas.push(b);
+        } else {
+          activeBetas.push(b);
+        }
+      }
+
+      console.log(`📋 页面版本状态检查:`);
+      console.log(`  最新 Release 页面: ${latestRelease ? latestRelease.name : '（无）'}`);
+      console.log(`  进行中 Beta 页面: ${activeBetas.length > 0 ? activeBetas.map(p => p.name).join(', ') : '（无）'}`);
+      if (outdatedBetas.length > 0) {
+        console.log(`  历史过期 Beta 页面: ${outdatedBetas.map(p => p.name).join(', ')}`);
+      }
+
+      if (outdatedBetas.length > 0) {
+        console.log(`\n⚠ 【决策分流 1】：检测到历史残留 Beta 页面（早于最新 release「${latestRelease.name}」）`);
+        outdatedBetas.forEach((b) => console.log(`   - ${b.name} (${extractDate(b.name)} < ${extractDate(latestRelease.name)})`));
+        console.log(`👉 动作：新会话中必须先提示用户是否要删除历史过期 Beta 页面：`);
+        outdatedBetas.forEach((b) => console.log(`   ./fimg page delete --name "${b.name}" --confirm`));
+      } else if (activeBetas.length > 0) {
+        activeBetas.sort((a, b) => (b.rev || 0) - (a.rev || 0));
+        const latestBeta = activeBetas[0];
+        console.log(`\n✔ 【决策分流 2】：存在有效进行中的 Beta 页面「${latestBeta.name}」（晚于/同步于最新 release）`);
+        console.log(`👉 动作：在新会话中询问用户是否要新建 Beta 页面：`);
+        console.log(`   - 若用户选择【新建】：./fimg page create --name "${latestBeta.base}-beta.${latestBeta.rev + 1}" --copy "${latestBeta.name}"`);
+        console.log(`   - 若用户选择【不新建】：直接在已有「${latestBeta.name}」上改动，严禁擅自新建页面！`);
+      } else {
+        console.log(`\n✔ 【决策分流 3】：当前仅有已发布 Release 页面「${latestRelease ? latestRelease.name : d.current}」，无任何 Beta。`);
+        console.log(`👉 动作：询问用户是否需要新建首个 Beta 页面开启迭代改动。`);
+      }
     } else if (action === 'create') {
       console.log(`✔ 已创建页面「${d.name}」（index ${d.index}${d.copiedFrom ? `，内容复制自「${d.copiedFrom}」` : ''}）`);
     } else if (action === 'rename') {
@@ -606,10 +652,12 @@ switch (cmd) {
 读取与定位
   status                 桥与插件状态（含渲染进度）
   ping                   与插件握手
-  page   list | create --name X [--copy 源页] [--no-top] [--force]
+  page   list | check | create --name X [--copy 源页] [--no-top] [--force]
          | rename --name X --to Y | delete --name X --confirm
          | promote --name X [--to 发布名] [--force]
                         页面管理（迭代工作流，见 docs/WORKFLOW.md）
+                        list: 列出所有页面
+                        check: 检查版本状态（对比最新 release 与 beta 日期，指导新会话提问策略）
                         命名规范: release=YYYY-MM-DD-主题  beta=YYYY-MM-DD-主题-beta.N
                         新页面默认插到文档最上方
   stats   [--page 名称]  顶层 Frame 与节点总数（默认统计当前页）
